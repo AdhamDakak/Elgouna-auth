@@ -76,8 +76,8 @@
             console.log('Authorization code received:', code);
             console.log('Redirecting to app with deep link...');
             
-            // Create the deep link - make sure this matches your app scheme
-            const deepLink = `elgounaconnect://auth?code=${encodeURIComponent(code)}${state ? `&state=${encodeURIComponent(state)}` : ''}`;
+            // Create the deep link with the correct format for Expo
+            const deepLink = `exp://10.40.21.24:8081/--/auth?code=${encodeURIComponent(code)}${state ? `&state=${encodeURIComponent(state)}` : ''}`;
             console.log('Deep link:', deepLink);
             
             // Try to redirect to the app
